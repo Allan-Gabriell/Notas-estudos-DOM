@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background-color: aquamarine;
+            color: blueviolet;
+            font: normal 20pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> com javascript</p> <!--O strong é uma tag usada para estilizar a parte selecionada em negrito-->
+    <div id="msg">Clique em mim</div>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0] /* O comando getElementsByTagName está selecionando por marca
+        um elemento do meu DOM no caso o Paragrafo (p) o numero [0] significa que vai ser o primeiro (p)*/
+        window.document.write('Está escrito assim ' + p1.innerText) // O innerText manda escrever no caso a variável p1
+        p1.style.color= "blue" // Aqui eu troco a cor do texto do paragrado p1
+        var p2 = window.document.getElementsByTagName("p")[1] // só identificamos [1] quando o comando está no plural
+        document.write(p2.innerHTML) // Ao usar o innerHTML eu mando escrever na tela p2 trazendo junto sua formatação
+        var d = window.document.getElementById('msg') // Aqui eu estou selecionando minha div pelo Id dela (que está declarado dentro dela)
+        d.style.background= 'green' // Aqui eu troquei a cor de fundo da minha variável d
+        // d.innerText = ('Estou aguardando...') // Aqui eu troquei o conteúdo da minha div que é a variável d
+        // window.document.getElementById('msg').innerText = "olá"     outra forma para a observação da linha de cima
+        var e = window.document.querySelector('div#msg') // Aqui eu selecionei meu elemento por seletor
+        e.style.color = "blue" // aqui eu dou o comando para trocar a cor da fonte para blue
+    </script>
+</body>
+</html>
